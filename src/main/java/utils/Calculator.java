@@ -1,8 +1,9 @@
-package Utils;
+package utils;
 
 import java.util.HashMap;
 import java.util.Map;
-import Models.Translator;
+
+import models.Translator;
 
 public class Calculator {
 
@@ -18,7 +19,7 @@ public class Calculator {
 	}
 
 	/**
-	 * Metodo que combierte el numero romano a numero arabico
+	 * Metodo que combierte el numero romano a numero Arabic
 	 * 
 	 * @return number Arabic
 	 */

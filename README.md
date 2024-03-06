@@ -71,7 +71,7 @@ Un número escrito en números arábigos se puede dividir en dígitos. Por ejemp
 
 Salida:
 
-La salida debe dar como resultado el texto galáctico y su equivalente en Aravico, si se menciona el metal debe mostrar los créditos equivalentes
+La salida debe dar como resultado el texto galáctico y su equivalente en Arábigo, si se menciona el metal debe mostrar los créditos equivalentes
 
 Salida de prueba:
 
@@ -110,7 +110,7 @@ Instrucciones:
 5. Salir
 
 Entonces en: 
-1. encontramos la opción de ingresar el diccionario con las traducciones que necesitemos por default  esta la descrita en "entradas" 
+1. Encontramos la opción de ingresar el diccionario con las traducciones que necesitemos por default  esta la descrita en "entradas" 
 
 2. En esta opción podemos ingresar el texto que queremos traducir con el diccionario definido, también nos da la opción de ingresar los datos de entrada mencionado anteriormente
 

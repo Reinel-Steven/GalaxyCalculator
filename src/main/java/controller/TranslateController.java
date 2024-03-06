@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import Models.Translator;
-import Utils.Calculator;
+import models.Translator;
+import utils.Calculator;
 
 public class TranslateController {
 

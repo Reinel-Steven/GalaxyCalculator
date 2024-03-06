@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author reibo
- *
- */
-module GalaxyCalculator {
-}
