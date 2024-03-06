@@ -1,9 +1,7 @@
 package Utils;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
 import Models.Translator;
 
 public class Calculator {
@@ -18,8 +16,10 @@ public class Calculator {
 		valRoman.put('D', 500);
 		valRoman.put('M', 1000);
 	}
+
 	/**
 	 * Metodo que combierte el numero romano a numero arabico
+	 * 
 	 * @return number Arabic
 	 */
 	public static int numberArabic(String numberRoman) {
@@ -44,27 +44,29 @@ public class Calculator {
 	}
 
 	/**
-	 * valida que el string sea un numero romano valido 
-	 * @param 
+	 * valida que el string sea un numero romano valido
+	 * 
+	 * @param
 	 * @return boolean valid number Roman
 	 */
 	public static boolean esSyntaxRomanValid(String numberRoman) {
-		
+
 		String backRoman = "";
 		char lastCharacter = ' ';
+		int repet = 1;
 		boolean restI = false;
 		boolean restX = false;
 		boolean restC = false;
-		
+
 		// número máximo de repeticiones permitidas
 		Map<Character, Integer> symbolReps = new HashMap<>();
-		symbolReps.put('I', 3);
+		symbolReps.put('I', 4);
 		symbolReps.put('V', 1);
-		symbolReps.put('X', 3);
+		symbolReps.put('X', 4);
 		symbolReps.put('L', 1);
-		symbolReps.put('C', 3);
+		symbolReps.put('C', 4);
 		symbolReps.put('D', 1);
-		symbolReps.put('M', 3);		
+		symbolReps.put('M', 4);
 
 		// Recorre el número romano
 		for (int i = numberRoman.length() - 1; i >= 0; i--) {
@@ -73,13 +75,15 @@ public class Calculator {
 			if (!symbolReps.containsKey(symbol)) {
 				return false;
 			}
-			
+
 			// Verifica si se excede el número máximo de repeticiones permitidas
 			if (symbol == lastCharacter) {
-				if (symbolReps.get(symbol) < 1) {
+				repet++;
+				if (symbolReps.get(symbol) < 1 || repet>3) {
 					return false;
 				}
 			} else {
+				repet = 1;
 				lastCharacter = symbol;
 				if (symbolReps.get(symbol) < 1) {
 					return false;
@@ -130,47 +134,55 @@ public class Calculator {
 
 		}
 		return true;
-	}	
+	}
+
 	/**
 	 * evalua la data suministrada y retorna el resultado de la traduccion
+	 * 
 	 * @param data
 	 * @param traslator
 	 * @return
 	 */
 	public static String valueData(String data, Translator traslator) {
+		if (data.length() < 11) {
+			return "No entendi el mensaje -> " + data;
+		}
 		Map<String, Character> symbols = traslator.getSymbol();
 		Map<String, Double> valueMetals = traslator.getValueMetals();
 		int arabic = 0;
 		String[] result;
-		Double valMetal=0.0;;
-		String[] text;		
+		Double valMetal = 0.0;
+		;
+		String[] text;
 		String roman = "";
-		
-		if(data.substring(0, 10).equalsIgnoreCase("Cuánto es ") ) {								
-			 text = data.split("Cuánto es ");			
-		}else if( data.substring(0, 23).equalsIgnoreCase("Cuántos créditos tiene ") ) {			
+
+		if (data.substring(0, 10).equalsIgnoreCase("Cuánto es ")) {
+			text = data.split("Cuánto es ");
+		} else if (data.substring(0, 23).equalsIgnoreCase("Cuántos créditos tiene ")) {
 			text = data.split("Cuántos créditos tiene ");
-		}else{
-			text = data.split(data);
-		}					
-		
+		} else {
+			data = "-> " + data;
+			text = data.split("-> ");
+		}
+
 		result = text[1].split(" ");
-		
-		for(String str: result) {
-			if(symbols.containsKey(str)) {
+
+		for (String str : result) {
+			if (symbols.containsKey(str)) {
 				roman += symbols.get(str);
-			}else
-			if(valueMetals.containsKey(str)) {
+			} else if (valueMetals.containsKey(str)) {
 				valMetal = valueMetals.get(str);
-			}			
+			} else {
+				return "No entendi el mensaje " + data;
+			}
 		}
 		arabic = numberArabic(roman);
-		valMetal *= arabic; 
-		if(valMetal>0) {
-			return Arrays.toString(result) + " cuesta "+ valMetal + " créditos";
-		}else {
-			return Arrays.toString(result) + " es " + arabic;
+		valMetal *= arabic;
+		if (valMetal > 0) {
+			return data.substring(23) + " cuesta " + valMetal + " créditos";
+		} else {
+			return data.substring(10) + " es " + arabic;
 		}
 	}
-	
+
 }

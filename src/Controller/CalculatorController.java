@@ -16,12 +16,12 @@ public class CalculatorController extends TranslateController{
 	 * Define el diccionario del traductor
 	 */
 	private static void romanCalculator() {
-		System.out.print("para insertar el test de numeros romanos escriba ok, para terminar escriba exit");
+		System.out.println("para insertar el test de numeros romanos escriba ok, para terminar escriba exit");
 		Scanner scanner = new Scanner(System.in);
         List<String> numberRomans = new ArrayList<>();
         String romanText;
         do {
-	        System.out.print("Introduzca el número Romano: ");
+	        System.out.println("Introduzca el número Romano: ");
 	        
 	        romanText = scanner.next();
 	
@@ -85,7 +85,7 @@ public class CalculatorController extends TranslateController{
                 	System.out.println();
                     break;
                 case 2:
-                	translateText(t);
+					translateText(t);
                 	System.out.println();
                     break;
                 case 3:
