@@ -71,7 +71,7 @@ Un número escrito en números arábigos se puede dividir en dígitos. Por ejemp
 
 Salida:
 
-La salida debe dar como resultado el texto galactico y su equivalente en Arabico, si se menciona el metal debe mostrar los creditos equivalentes
+La salida debe dar como resultado el texto galáctico y su equivalente en Aravico, si se menciona el metal debe mostrar los créditos equivalentes
 
 Salida de prueba:
 
@@ -101,7 +101,7 @@ La interfaz se realizo por consola, por esta razon la mejor forma de correr el p
 
 /***********************************************************************/
 Instrucciones:
-	el proyecto cuenta con un menu por consola ubicado en el main de la calse "CalculatorController" dando run java Aplication nos muestra las siguientes opciones:
+	el proyecto cuenta con un menu por consola ubicado en el main de la clase "CalculatorController" dando run java Aplication nos muestra las siguientes opciones:
 		----------------------- Menú ----------------------
 1. Insertar Diccionario
 2. Traducir Texto
@@ -110,16 +110,20 @@ Instrucciones:
 5. Salir
 
 Entonces en: 
-1. encontramos la opción de ingresar el diccionario con las traducciones que necesitemos por defaul esta la descrita en "entradas" 
+1. encontramos la opción de ingresar el diccionario con las traducciones que necesitemos por default  esta la descrita en "entradas" 
 
-2. en esta opción podemos ingresar el texto que queremos traducir con el diccionario definido, tambien nos da la opcion de ingresar los datos de entrada mencionado anteriormente
+2. En esta opción podemos ingresar el texto que queremos traducir con el diccionario definido, también nos da la opción de ingresar los datos de entrada mencionado anteriormente
 
-3. insertar Diccionario Script aun no esta desarrollado, en el momento funciona para restablecer el diccionario test, su funcionalidad sera implementar el ingreso de todo el script y lo lea linea a linea como el ejemplo del requerimiento
+3. Insertar Diccionario Script aún no está desarrollado, en el momento funciona para restablecer el diccionario test, su funcionalidad será implementar el ingreso de todo el script y lo lea línea a línea como el ejemplo del requerimiento
 
-4. nos retorna el valor del numero romano que ingresamos, o podemos dar la opción "ok" y nos arroja variables staticas de romanos con su valor o sus validaciones
+4. Nos retorna el valor del número romano que ingresamos, o podemos dar la opción "ok" y nos arroja variables estáticas de romanos con su valor o sus validaciones
 
 
 /***********************************************************************/
+
+Nota: Por el tiempo limitado el proyecto se encuentra con varias anomalías como la mescla de español e inglés, considerando el corto tiempo para el desarrollo del mismo  
+
+
 Contacto
 Ing. Reinel Steven Bolaños Martinez
 reinelstevenb@gmail.com
